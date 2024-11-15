@@ -58,7 +58,7 @@ export default function ParkingModal({ onClose }) {
       prev.map((spot) => {
         if (spot.id === spotId) {
           const bookingTime = new Date();
-          const expiryTime = new Date(bookingTime.getTime() + 2 * 60000); // 2 minutes
+          const expiryTime = new Date(bookingTime.getTime() + 2 * 3000); // 2 minutes
           return {
             ...spot,
             isBooked: true,
@@ -79,7 +79,7 @@ export default function ParkingModal({ onClose }) {
           return spot;
         })
       );
-    }, 2 * 60000);
+    }, 2 * 3000);
   };
 
   return (
