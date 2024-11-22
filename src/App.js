@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParkingModal from './components/Parking';
 import Infrastructure from './components/Infra';
+import Delivery from './components/Delivery';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/parking" element={<ParkingModal />} />
           <Route path="/infra" element={<Infrastructure />} />
+           <Route path="/delivery" element={<Delivery />} />
         </Routes>
         <Footer/>
     </Router>

@@ -1,0 +1,91 @@
+
+.delivery-page {
+  text-align: center;
+  color: #3e2723;
+  background-color: #fff8e1;
+}
+
+.delivery-header {
+  padding: 2rem;
+  background-color: #4e342e;
+  color: #fff;
+}
+
+.delivery-header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.delivery-header p {
+  font-size: 1.2rem;
+}
+
+.delivery-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.featured-image {
+  max-width: 400px;
+  border-radius: 10px;
+  margin-right: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.feature-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-now-button {
+  background-color: #d84315;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.order-now-button:hover {
+  background-color: #bf360c;
+}
+
+.delivery-info {
+  padding: 2rem;
+  background-color: #ffe0b2;
+}
+
+.delivery-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.delivery-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.delivery-info li {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.delivery-footer {
+  padding: 1rem;
+  background-color: #4e342e;
+  color: #fff;
+  font-size: 0.9rem;
+}
