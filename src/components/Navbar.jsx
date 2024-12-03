@@ -18,17 +18,17 @@ export default function Navbar() {
           <a href="/" className="nav-link">
             Home
           </a>
-          <a href="#products" className="nav-link">
+          <a href="products" className="nav-link">
             Our Products
           </a>
-          <a href="#delivery" className="nav-link">
+          <a href="delivery" className="nav-link">
             Delivery
           </a>
           <button
             onClick={() => setIsParkingModalOpen(true)}
             className="parking-button"
           >
-            <a href="#delivery" className="nav-link">
+            <a href="parking" className="nav-link">
               Parking
             </a>
           </button>
