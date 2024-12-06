@@ -3,62 +3,62 @@ import { X, Car, MapPin, Clock } from "lucide-react";
 
 export default function ParkingModal({ onClose }) {
   const [sensorData, setSensorData] = useState({
-    sensor1: null,
-    sensor2: null,
+    sensor1: false,
+    sensor2: false,
   });
   const [isConnected, setIsConnected] = useState(false);
   const [spots, setSpots] = useState([
-    { id: 1, sensor: null, location: "Level 1, A1" },
-    { id: 2, sensor: null, location: "Level 1, A2" },
+    { id: 1, sensor: false, location: "Level 1, A1" },
+    { id: 2, sensor: true, location: "Level 1, A2" },
     { id: 3, sensor: true, location: "Level 1, A3" },
     { id: 4, sensor: false, location: "Level 1, A4" },
     { id: 5, sensor: true, location: "Level 1, B1" },
     { id: 6, sensor: true, location: "Level 1, B2" },
   ]);
-  const NODEMCU_WS = "ws://192.168.82.206:81";
+  // const NODEMCU_WS = "ws://192.168.82.206:81";
 
-  useEffect(() => {
-    const socket = new WebSocket(NODEMCU_WS);
+  // useEffect(() => {
+  //   const socket = new WebSocket(NODEMCU_WS);
 
-    socket.onopen = () => {
-      setIsConnected(true);
-    };
+  //   socket.onopen = () => {
+  //     setIsConnected(true);
+  //   };
 
-    socket.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      setSensorData(data);
-      updateSpots(data);
-    };
+  //   socket.onmessage = (event) => {
+  //     const data = JSON.parse(event.data);
+  //     setSensorData(data);
+  //     updateSpots(data);
+  //   };
 
-    socket.onerror = () => {
-      setIsConnected(false);
-    };
+  //   socket.onerror = () => {
+  //     setIsConnected(false);
+  //   };
 
-    socket.onclose = () => {
-      setIsConnected(false);
-    };
+  //   socket.onclose = () => {
+  //     setIsConnected(false);
+  //   };
 
-    return () => {
-      socket.close();
-    };
-  }, []);
+  //   return () => {
+  //     socket.close();
+  //   };
+  // }, []);
 
-  const updateSpots = (data) => {
-    setSpots((prev) =>
-      prev.map((spot) => {
-        if (spot.id === 1) return { ...spot, sensor: data.sensor1 };
-        if (spot.id === 2) return { ...spot, sensor: data.sensor2 };
-        return spot;
-      })
-    );
-  };
+  // const updateSpots = (data) => {
+  //   setSpots((prev) =>
+  //     prev.map((spot) => {
+  //       if (spot.id === 1) return { ...spot, sensor: data.sensor1 };
+  //       if (spot.id === 2) return { ...spot, sensor: data.sensor2 };
+  //       return spot;
+  //     })
+  //   );
+  // };
 
   const handleBookSpot = (spotId) => {
     setSpots((prev) =>
       prev.map((spot) => {
         if (spot.id === spotId) {
           const bookingTime = new Date();
-          const expiryTime = new Date(bookingTime.getTime() + 2 * 3000); // 2 minutes
+          const expiryTime = new Date(bookingTime.getTime() + 2 * 60000); // 2 minutes
           return {
             ...spot,
             isBooked: true,
@@ -79,7 +79,7 @@ export default function ParkingModal({ onClose }) {
           return spot;
         })
       );
-    }, 2 * 3000);
+    }, 2 * 60000);
   };
 
   return (
